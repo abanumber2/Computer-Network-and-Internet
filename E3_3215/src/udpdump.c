@@ -78,7 +78,7 @@ typedef struct udp_header
 /* prototype of the packet handler */
 void packet_handler(u_char *param, const struct pcap_pkthdr *header, const u_char *pkt_data);
 
-//#define FROM_NIC
+#define FROM_NIC
 int main()
 {
 	pcap_if_t *alldevs;
@@ -90,9 +90,7 @@ int main()
 	u_int netmask;
 	char packet_filter[] = "ip and udp";
 	struct bpf_program fcode;
-
-#ifdef FROM_NIC 
-
+#ifdef FROM_NIC
 	/* Retrieve the device list */
 	if(pcap_findalldevs(&alldevs, errbuf) == -1)
 	{
@@ -189,10 +187,9 @@ int main()
 	
 	/* start the capture */
 	pcap_loop(adhandle, 0, packet_handler, NULL);
-	
 #else
 	/* Open the capture file */
-	if ((adhandle = pcap_open_offline("C:\\Users\\COCO\\Desktop\\wiresharpFile.pcap",			// name of the device
+	if ((adhandle = pcap_open_offline("D:\\homework\\2024-20251st\\Computer-Network-and-Internet\\experiment\\E3_3215\\src\\dns.pcap",			// name of the device
 		errbuf					// error buffer
 	)) == NULL)
 	{
@@ -205,7 +202,6 @@ int main()
 
 	pcap_close(adhandle);
 #endif
-
 	return 0;
 }
 
