@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=https://www.baidu.com/s?wd=www.xzking.com
+[InternetShortcut]
+URL=https://www.baidu.com/s?wd=www.xzking.com
+Modified=000E8A8B0A6ECB0167
+IconFile=C:\Program Files\Internet Explorer\IEXPLORE.EXE
+IconIndex=0
+IDList=
+HotKey=0
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2
